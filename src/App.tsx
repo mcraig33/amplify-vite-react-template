@@ -28,9 +28,9 @@ function App() {
       {({ signOut, user}) => (
 
         <main>
-          <h1>My todos</h1>
+          <h1>Your todos</h1>
           <button onClick={createTodo}>+ new</button>
-          <ul>
+          <ul key={user?.userId}>
             {todos.map((todo) => (
               <li key={todo.id} onClick={() => deleteTodo(todo.id)}>{todo.content}</li>
             ))}
